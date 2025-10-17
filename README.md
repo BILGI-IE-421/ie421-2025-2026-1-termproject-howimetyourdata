@@ -2,3 +2,4 @@
 123203096-Alp Deniz Batuhan
 123203102-Emir Buğra Çakır
 122203049 - Beste Eren
+122203052-Tuana Şen
