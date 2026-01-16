@@ -8,18 +8,24 @@ Tuana Şen-122203052
 ### How Did We Prepare the Data?
 We first follow this procedures to ensure our data is ready.
 ### Fixing Airport Names: We fixed the airport names for October beacuse they were shown as letters.
-Cleaning: We remove the flights with no information and cancelled flights.
-Narrowing: We focus on top 10 major US hubs to catch the most important trends.
-Changing Time Format: We chahnged flights times clock format to 24 hour clocks. This way we could see the trends or busy times easily.
-Research Questions
-1-How does an initial departure delay in the morning amplify throughout an aircraft's daily 
+### Cleaning: We remove the flights with no information and cancelled flights.
+### Narrowing Scope: We focus on top 10 major US hubs to catch the most important trends.
+### Changing Time Format: We chahnged flights times clock format to 24 hour clocks. This way we could see the trends or busy times easily.
+# Research Questions
+### Q1-How does an initial departure delay in the morning amplify throughout an aircraft's daily 
 rotation?
-2-How do temporal features (time of day, day of week, and seasonality) correlate with operational 
+### Q2-How do temporal features (time of day, day of week, and seasonality) correlate with operational 
 congestion at major U.S. hubs?
-3-To what extent can the variation in Arrival Delay (minutes) be explained by key operational 
+### Q3-To what extent can the variation in Arrival Delay (minutes) be explained by key operational 
 variables using Linear Regression Analysis?
-Our Analyzed Modules
-1-Interactive Airport Dashboard
+# Our Analyzed Modules
+### 1-Interactive Airport Dashboard
 We can see monthly airport congestion for each major US hub.
-2-Flight Congestion Analysis
-Using heatmap we couuld analyze delay propogation through flights. When the flight numbers increase the higher 
+### 2-Heatmap of The Delay Propogation
+Using heatmap we couuld analyze delay propogation through flights.We used  flights with more than rotations because the data structure becomes meaningful under this circumstances.
+### 3-Flight Congestion Analysis
+In our third module we used jointgrid to analyze the time relations between the day of the week and the day hours.We used hexbins instead of hexbins because our data is huge so using scatter plot desn't show significant results.
+### 4-Predictive Model
+We used linear regression model to predict how arrival delay changes due to departure delay.Our regression model can show the variance of the actual delays with 96 percent significance.
+
+
