@@ -1,9 +1,9 @@
 # IE 421 - US Flight Data Analysis
 ### How I Met Your Data - Team Members
-Alp Deniz Batuhan-123203096
-Emir Buğra Çakır -123203102
-Beste Eren-122203049
-Tuana Şen-122203052
+- Alp Deniz Batuhan 123203096
+- Emir Buğra Çakır 123203102
+- Beste Eren 122203049
+- Tuana Şen 122203052
 ### Data
 We used US Flight Delays and Cancellations Data of 2015 by the DOT.
 Link: https://www.kaggle.com/datasets/usdot/flight-delays
