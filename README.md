@@ -5,7 +5,8 @@ Emir Buğra Çakır -123203102
 Beste Eren-122203049
 Tuana Şen-122203052
 ### Data
-We used US Flight Delays and Cancellations Data of 2015 by the DOT. 
+We used US Flight Delays and Cancellations Data of 2015 by the DOT.
+Link: https://www.kaggle.com/datasets/usdot/flight-delays
 ### How Did We Prepare the Data?
 We first follow this procedures to ensure our data is ready.
 ### Fixing Airport Names: We fixed the airport names for October beacuse they were shown as letters.
