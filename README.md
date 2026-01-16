@@ -10,7 +10,7 @@ We first follow this procedures to ensure our data is ready.
 ### Fixing Airport Names: We fixed the airport names for October beacuse they were shown as letters.
 ### Cleaning: We remove the flights with no information and cancelled flights.
 ### Narrowing Scope: We focus on top 10 major US hubs to catch the most important trends.
-### Changing Time Format: We chahnged flights times clock format to 24 hour clocks. This way we could see the trends or busy times easily.
+### Time Standartization: We chahnged flights times clock format to 24 hour clocks. This way we could see the trends or busy times easily.
 # Research Questions
 ### Q1-How does an initial departure delay in the morning amplify throughout an aircraft's daily 
 rotation?
@@ -27,5 +27,13 @@ Using heatmap we couuld analyze delay propogation through flights.We used  fligh
 In our third module we used jointgrid to analyze the time relations between the day of the week and the day hours.We used hexbins instead of hexbins because our data is huge so using scatter plot desn't show significant results.
 ### 4-Predictive Model
 We used linear regression model to predict how arrival delay changes due to departure delay.Our regression model can show the variance of the actual delays with 96 percent significance.
+# Project Results
+### Afternoon Stress
+Our congestion analysis showed that aviation network reaches it's peak at 14.00-19.00. Passengers who fly this hours have more chance to get effected by delay more than other hours.
+### Major Hub's Congestion Performance
+Top hubs in the analysis(ATL and ORD) shows more stable congestion performance rather than other us hubs.Even if their traffic density are high they can operate well.
+### Snowball Effect 
+In our analysis a 30 minute of small delay generally turns into bigger delays at the end of the day.The system can not always tolerate this small delays.
+
 
 
