@@ -1,5 +1,4 @@
 # IE 421 - US Flight Data Analysis
-This project focuses on flight delays and causes in the  USA. We used 4 modules to show delay propogation,busy times,airport traffic.
 ### How I Met Your Data - Team Members
 Alp Deniz Batuhan-123203096
 Emir Buğra Çakır -123203102
