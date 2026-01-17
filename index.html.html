@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE 421 – How I Met Your Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <style>
+        /* Storytelling ve Sabit Tasarım Dengesi */
+        .section-header {
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .story-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 60px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .story-text h3 {
+            font-size: 1.5rem;
+            color: #2d3436;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .story-text h3::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: #EF553B;
+            border-radius: 2px;
+        }
+
+        .insight-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e1f5fe;
+            color: #0288d1;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .full-width-story {
+            grid-template-columns: 1fr;
+            margin-bottom: 80px;
+        }
+
+        /* Home Butonu Özel Stili */
+        .home-btn {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="landing-page">
+        <div class="landing-content">
+            <h1 class="landing-title">IE 421 DATA SCIENCE FOR ENGINEERS TERM PROJECT</h1>
+            <div class="group-name-tag">Group: How I Met Your Data</div>
+            <br>
+            <button class="explore-btn" onclick="showContent()">View Project Analysis</button>
+        </div>
+    </div>
+
+    <div id="main-content" style="display:none;">
+        <header class="report-header">
+            <div class="container">
+                <h1>IE 421 – Data Science for Engineers</h1>
+                <p>Flight Delay Propagation & Operational Congestion Analysis</p>
+                <nav>
+                    <a href="#" onclick="showLanding()" class="home-btn"><i class="fa-solid fa-house"></i> Home</a>
+                    <a href="#introduction">Introduction</a>
+                    <a href="#visuals">Descriptive Visualizations</a>
+                    <a href="#predictive">Predictive Modeling</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <section id="introduction" class="section">
+                <div class="section-header">
+                    <h2>Introduction</h2>
+                </div>
+                <p>This project analyzes operational inefficiencies in airline systems using the <strong>2015 U.S. Flight Delays and Cancellations Dataset</strong>. By focusing on delay propagation, temporal congestion patterns, and predictive modeling, we aim to understand how small disruptions escalate within complex transportation systems. In the following visuals, we made conclusions about our analysis</p>
+            </section>
+
+            <section id="visuals" class="section">
+                <div class="section-header">
+                    <h2>Descriptive Visualizations</h2>
+                </div>
+
+                <div class="story-card full-width-story">
+                    <div class="plotly-container">
+                        <div id="6ed8a60c-585d-40cd-847f-76a52b734c8a" class="plotly-graph-div" style="height:500px;"></div>
+                    </div>
+                    <div class="story-text">
+                        <span class="insight-badge">Interactive Dashboard</span>
+                        <h3>Monthly Congestion Patterns</h3>
+                        <p>This chart illustrates the monthly congestion patterns observed across 10 major airline hubs. Green bars indicate that the hub's specific congestion threshold has not been exceeded. Red bars signify that the threshold has been surpassed for that month. By analyzing this visualization, we can precisely identify which major hubs experience congestion during specific months. This insight enables airport authorities and airlines to plan their monthly flight schedules more effectively and enhance operational flexibility.</p>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="img-container">
+                        <img src="Visuals/RQ1.png" alt="Delay Propagation" onclick="openModal(this)">
+                        <div class="overlay"><p>Click to Zoom</p></div>
+                    </div>
+                    <div class="story-text">
+                        <span class="insight-badge">Correlation Analysis</span>
+                        <h3>The "Snowball Effect"</h3>
+                        <p>This matrix visualizes the "Snowball Effect," demonstrating how flight delays compound as an aircraft completes more flight segments throughout its daily rotation. To implement this analysis, we focused on a specific delay interval of 30 to 90 minutes, a range strategically selected due to its significant impact on flight sector operations. Within this framework, rotation length is defined as the total number of flights a single aircraft performs in a day, while net delay accumulation represents the difference between the initial flight's delay and the final flight's arrival delay. The resulting heatmap uses color density to represent the flight count, where upper cells indicate larger "snowballs"—high levels of delay accumulation—and lower cells represent smaller ones. The analysis reveals that as the rotation length increases, the density of delays shifts toward higher accumulation intervals, confirming that early-day disruptions tend to escalate throughout the schedule. While the data shows that massive "snowballs" are not overly frequent, their existence proves that current progress is open for optimization; the system is not at a deficient level, but there is clear room for improvement to enhance overall operational efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="story-card" style="grid-template-columns: 0.8fr 1.2fr;">
+                    <div class="story-text">
+                        <span class="insight-badge">Temporal Trends</span>
+                        <h3>Peak Hour Bottlenecks</h3>
+                        <p>Utilizing the complete flight dataset, this jointplot visualization identifies critical bottleneck hours by mapping flight density across the days of the week and specific times of day. The use of hexagonal binning allows for a precise representation of traffic intensity, where red hexagons signify areas of high flight density and green hexagons represent lower activity levels. Certain gaps within the plot indicate periods with no recorded data, a common occurrence in such a large-scale dataset due to natural scheduling intervals or maintenance windows. By pinpointing exactly which hours of each day experience the highest concentrations of traffic, this analysis provides essential insights for airport authorities. This data-driven approach enables more flexible and efficient time management, allowing for optimized scheduling and better resource allocation to mitigate peak-hour congestion.</p>
+                    </div>
+                    <div class="img-container">
+                        <img src="Visuals/RQ2.png" alt="Heatmap" onclick="openModal(this)">
+                        <div class="overlay"><p>Click to Zoom</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="predictive" class="section">
+                <div class="section-header">
+                    <h2>Predictive Modeling</h2>
+                </div>
+                <div class="story-card">
+                    <div class="img-container">
+                        <img src="Visuals/RQ3 (Predictive Model).png" alt="Regression" onclick="openModal(this)">
+                        <div class="overlay"><p>Click to Zoom</p></div>
+                    </div>
+                    <div class="story-text">
+                        <span class="insight-badge">Regression Results</span>
+                        <h3>Arrival Delay Prediction Model</h3>
+                        <p>This predictive model utilizes a Multiple Linear Regression (OLS) analysis to quantify the impact of departure metrics on flight arrival delays. By incorporating departure delay, taxi-out time, and flight distance as independent variables, the model achieves a remarkably high R-squared value of 0.926, indicating that it explains approximately 92.6% of the variance in arrival delays. The regression coefficients reveal that departure delay is the strongest predictor, with a near one-to-one correlation (0.996), suggesting that delays at the gate translate almost directly to the final arrival time. Additionally, the model shows that each minute of taxi-out time contributes approximately 0.78 minutes to the arrival delay, while flight distance has a negligible but statistically significant negative impact (-0.0039), implying that longer flights may offer marginal opportunities for time recovery in the air. The visualization highlights the strong linear relationship between the predicted and actual flight records, providing a robust statistical framework for forecasting operational disruptions. Overall, these findings demonstrate that arrival delays are highly predictable based on early-stage departure metrics, offering a reliable tool for airlines to anticipate and mitigate schedule deviations.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>IE 421 – Data Science for Engineers | How I Met Your Data Team</p>
+        </footer>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script type="text/javascript">
+        // Plotly Grafiği Verisi (Aynı kalacak)
+        window.PLOTLYENV=window.PLOTLYENV || {};
+        if (document.getElementById("6ed8a60c-585d-40cd-847f-76a52b734c8a")) {
+            Plotly.newPlot("6ed8a60c-585d-40cd-847f-76a52b734c8a", [{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 1076.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"ATL","visible":true,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[952.0,977.3571428571429,1056.5806451612902,1045.6666666666667,1045.0967741935483,1091.1666666666667,1088.225806451613,1087.3225806451612,1044.4333333333334,1051.225806451613,1030.2333333333333,1000.6129032258065],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 888.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#EF553B","#00CC96","#00CC96"]},"name":"ORD","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[757.5483870967741,779.0,842.8709677419355,860.1666666666666,866.8064516129032,919.7,910.4193548387096,908.0322580645161,872.1,892.0,869.2666666666667,825.1290322580645],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 733.00<br><extra></extra>","marker":{"color":["#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"DFW","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[746.8709677419355,744.25,749.1612903225806,728.9,714.8387096774194,752.4333333333333,738.5483870967741,719.2903225806451,677.8,678.8387096774194,651.1333333333333,666.9032258064516],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 604.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"DEN","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[551.2903225806451,558.6428571428571,600.2903225806451,583.6333333333333,584.0645161290323,622.2333333333333,615.3548387096774,608.5806451612904,579.9,585.0322580645161,570.5666666666667,579.8709677419355],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 588.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"LAX","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[559.3548387096774,562.9285714285714,581.0967741935484,580.2666666666667,579.9032258064516,617.7666666666667,624.8709677419355,621.4516129032259,583.3,571.8709677419355,548.6333333333333,549.8387096774194],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 455.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#EF553B","#00CC96","#00CC96"]},"name":"SFO","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[415.83870967741933,413.17857142857144,432.96774193548384,433.96666666666664,436.8709677419355,461.53333333333336,465.93548387096774,470.64516129032256,444.2,457.0967741935484,451.23333333333335,445.83870967741933],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 441.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"PHX","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[423.2903225806452,425.57142857142856,468.5806451612903,458.2,445.258064516129,462.3666666666667,460.4516129032258,442.03225806451616,400.76666666666665,416.80645161290323,417.06666666666666,429.64516129032256],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 453.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#EF553B","#00CC96","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"IAH","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[431.48387096774195,436.82142857142856,453.06451612903226,450.23333333333335,465.0,473.3,452.5483870967742,432.8709677419355,405.56666666666666,426.16129032258067,423.56666666666666,404.0967741935484],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 409.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#EF553B","#00CC96","#EF553B","#00CC96","#00CC96"]},"name":"LAS","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[374.3225806451613,377.5,399.9032258064516,403.43333333333334,411.0967741935484,412.06666666666666,409.258064516129,409.61290322580646,400.96666666666664,409.2903225806452,396.8333333333333,389.741935483871],"type":"bar"},{"hovertemplate":"<b>Month:</b> %{x}<br><b>Avg Daily Volume:</b> %{y:.2f}<br><b>Congestion Threshold:</b> 345.00<br><extra></extra>","marker":{"color":["#00CC96","#00CC96","#00CC96","#00CC96","#00CC96","#EF553B","#EF553B","#EF553B","#00CC96","#00CC96","#00CC96","#00CC96"]},"name":"MSP","visible":false,"x":[1,2,3,4,5,6,7,8,9,10,11,12],"y":[287.19354838709677,293.4642857142857,320.83870967741933,333.93333333333334,338.2258064516129,378.8333333333333,381.0967741935484,374.9032258064516,337.93333333333334,341.4193548387097,327.53333333333336,315.5806451612903],"type":"bar"}], {"xaxis":{"title":{"text":"Months"},"tickmode":"array","tickvals":[1,2,3,4,5,6,7,8,9,10,11,12],"ticktext":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"margin":{"t":100,"b":50,"l":50,"r":100},"updatemenus":[{"active":0,"buttons":[{"args":[{"visible":[true,false,false,false,false,false,false,false,false,false]},{"title":"Monthly Operational Congestion: ATL"}],"label":"ATL","method":"update"},{"args":[{"visible":[false,true,false,false,false,false,false,false,false,false]},{"title":"Monthly Operational Congestion: ORD"}],"label":"ORD","method":"update"},{"args":[{"visible":[false,false,true,false,false,false,false,false,false,false]},{"title":"Monthly Operational Congestion: DFW"}],"label":"DFW","method":"update"},{"args":[{"visible":[false,false,false,true,false,false,false,false,false,false]},{"title":"Monthly Operational Congestion: DEN"}],"label":"DEN","method":"update"},{"args":[{"visible":[false,false,false,false,true,false,false,false,false,false]},{"title":"Monthly Operational Congestion: LAX"}],"label":"LAX","method":"update"},{"args":[{"visible":[false,false,false,false,false,true,false,false,false,false]},{"title":"Monthly Operational Congestion: SFO"}],"label":"SFO","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,true,false,false,false]},{"title":"Monthly Operational Congestion: PHX"}],"label":"PHX","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,true,false,false]},{"title":"Monthly Operational Congestion: IAH"}],"label":"IAH","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,true,false]},{"title":"Monthly Operational Congestion: LAS"}],"label":"LAS","method":"update"},{"args":[{"visible":[false,false,false,false,false,false,false,false,false,true]},{"title":"Monthly Operational Congestion: MSP"}],"label":"MSP","method":"update"}],"x":1.15,"y":1.2}],"title":{"text":"Monthly Operational Congestion: ATL"},"yaxis":{"title":{"text":"Average Daily Flight Volume"}},"showlegend":false}, {"responsive": true});
+        }
+
+        // Ana İçeriği Gösteren Fonksiyon
+        function showContent() {
+            document.getElementById('landing-page').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Kapak Sayfasına Geri Dönüş Fonksiyonu
+        function showLanding() {
+            document.getElementById('landing-page').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+            window.scrollTo(0, 0);
+        }
+
+        // Modal Fonksiyonları
+        function openModal(element) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            modal.style.display = "block";
+            modalImg.src = element.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
