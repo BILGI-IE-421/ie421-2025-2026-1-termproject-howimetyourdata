@@ -26,5 +26,5 @@ We utilized both descriptive and predictive modeling techniques to extract insig
 * **Predictive Model:** A **Multiple Linear Regression (OLS)** model was constructed to forecast arrival delays. Our model achieved a high **R-squared value of 0.926**, demonstrating strong predictive power regarding schedule deviations.
 
 ## Website link
-You can explore our interactive dashboards, detailed visualizations, and final project conclusions through our live website:
+You can explore our interactive dashboards, detailed visualizations, and final project conclusions through our live website: https://alpdenizb.github.io/howimetyourdatasite/
 
